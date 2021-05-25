@@ -92,7 +92,7 @@ def main():
 
     resul=""
     if st.button("Predict"):
-      result=predict_note_authentication(chanel,region,fresh1,milk1,grocery1,frozen1,detergents1,delicassen1,fresh2,milk2,grocery2,frozen2,detergents2,delicassen2,fresh3,milk3,grocery3,frozen3,detergents3,delicassen3,fresh4,milk4,grocery4,frozen4,detergents4,delicassen4,fresh5,milk5,grocery5,frozen5,detergents5,delicassen5)
+      result,res=predict_note_authentication(chanel,region,fresh1,milk1,grocery1,frozen1,detergents1,delicassen1,fresh2,milk2,grocery2,frozen2,detergents2,delicassen2,fresh3,milk3,grocery3,frozen3,detergents3,delicassen3,fresh4,milk4,grocery4,frozen4,detergents4,delicassen4,fresh5,milk5,grocery5,frozen5,detergents5,delicassen5)
       st.success('Model has predicted {} '.format(result))
       st.success('Model has predicted {} '.format(res))
       
