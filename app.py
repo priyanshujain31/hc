@@ -14,22 +14,22 @@ sc = StandardScaler()
 X = sc.fit_transform(X)
 def predict_note_authentication(chanel,region,fresh1,milk1,grocery1,frozen1,detergents1,delicassen1,fresh2,milk2,grocery2,frozen2,detergents2,delicassen2,fresh3,milk3,grocery3,frozen3,detergents3,delicassen3,fresh4,milk4,grocery4,frozen4,detergents4,delicassen4,fresh5,milk5,grocery5,frozen5,detergents5,delicassen5):
   predict= model.fit_predict(sc.transform([[fresh1,milk1,grocery1,frozen1,detergents1,delicassen1],[fresh2,milk2,grocery2,frozen2,detergents2,delicassen2],[fresh3,milk3,grocery3,frozen3,detergents3,delicassen3],[fresh4,milk4,grocery4,frozen4,detergents4,delicassen4],[fresh5,milk5,grocery5,frozen5,detergents5,delicassen5]]))
-  #for i in predict:
-   # if predict==[0]:
-   #   result0="Customer is careless"
+  res=[]
+  for i in predict:
+    if i==[0]:
+      res.append("Customer is careless")
 
-    #if predict==[1]:
-    #  result1="Customer is standard"
-   # if predict==[2]:
-     # result2="Customer is Target"
-    #if predict==[3]:
-    #  result3="Customer is careful"
+    elif  i==[1]:
+       res.append("Customer is standard")
+    elif  i==[2]:
+       res.append("Customer is Target")
+    elif  i==[3]:
+       res.append("Customer is careful")
 
-    #if predict==[4]:
-     # result4="Custmor is sensible"
-   #result=result0+result1+result2+result3+result4
+    elif  i==[4]:
+       res.append("Custmor is sensible")
   
-  return predict
+  return predict,res
 def main():
 
     
@@ -93,7 +93,8 @@ def main():
     resul=""
     if st.button("Predict"):
       result=predict_note_authentication(chanel,region,fresh1,milk1,grocery1,frozen1,detergents1,delicassen1,fresh2,milk2,grocery2,frozen2,detergents2,delicassen2,fresh3,milk3,grocery3,frozen3,detergents3,delicassen3,fresh4,milk4,grocery4,frozen4,detergents4,delicassen4,fresh5,milk5,grocery5,frozen5,detergents5,delicassen5)
-      st.success('Model has predicted {}'.format(result))
+      st.success('Model has predicted {} '.format(result))
+      st.success('Model has predicted {} '.format(res))
       
     if st.button("About"):
       st.subheader("Developed by Priyanshu Jain")
